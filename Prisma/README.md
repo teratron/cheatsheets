@@ -1,6 +1,6 @@
 # Prisma
 
-`Prisma` — это современное (продвинутое) [объектно-реляционное отображение](https://ru.wikipedia.org/wiki/ORM) (Object-Relational Mapping, ORM) для `Node.js` и `TypeScript`. Проще говоря, `Prisma` — это инструмент, позволяющий работать с реляционными (`PostgreSQL`, `MySQL`, `SQL Server`, `SQLite`) и не реляционной (`MongoDB`) базами данных с помощью `JavaScript` или `TypeScript` без использования [`SQL`](https://ru.wikipedia.org/wiki/SQL) (хотя такая возможность имеется).
+`Prisma` — это современное (продвинутое) [объектно-реляционное отображение](https://ru.wikipedia.org/wiki/ORM) (Object-Relational Mapping, ORM) для `Node.js` и `TypeScript`. Проще говоря, `Prisma` — это инструмент, позволяющий работать с реляционными (`PostgreSQL`, `MySQL`, `SQL Server`, `SQLite`) и не реляционной (`MongoDB`) базами данных с помощью `JavaScript` или `TypeScript` без использования [`SQL`](https://ru.wikipedia.org/wiki/SQL) (хотя такая возможность имеется).
 
 ## Содержание
 
@@ -33,7 +33,7 @@ npx prisma init
 
 ## Клиент
 
-Импортируем и создаем экземпляр клиента `Prisma`:
+Импортируем и создаем экземпляр клиента `Prisma`:
 
 ```javascript
 import { PrismaClient } from '@prisma/client'
@@ -55,18 +55,19 @@ module.exports = prisma
 
 ## Типы данных
 
-- `String` — строка переменной длины (для `PostgreSQL` — это тип `text`);
-- `Boolean` — логическое значение: `true` или `false` (`boolean`);
-- `Int` — целое число (`integer`);
-- `BigInt` — [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) (`integer`);
-- `Float` — число с плавающей точкой (запятой) (`double precision`);
-- `Decimal` (`decimal(65,30)`);
-- `DateTime` — дата и время в формате [`ISO 8601`](https://ru.wikipedia.org/wiki/ISO_8601);
-- `Json` — объект в формате `JSON` (`jsonb`);
-- `Bytes` (`bytea`).
+| Типы       | Описание                                                                                                        |
+|------------|-----------------------------------------------------------------------------------------------------------------|
+| `String`   | строка переменной длины (для `PostgreSQL` — это тип `text`)                                                     |
+| `Boolean`  | логическое значение: `true` или `false` (`boolean`)                                                             |
+| `Int`      | целое число (`integer`)                                                                                         |
+| `BigInt`   | [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) (`integer`) |
+| `Float`    | число с плавающей точкой (запятой) (`double precision`);                                                        |
+| `Decimal`  | (`decimal(65,30)`)                                                                                              |
+| `DateTime` | дата и время в формате [`ISO 8601`](https://ru.wikipedia.org/wiki/ISO_8601)                                     |
+| `Json`     | объект в формате `JSON` (`jsonb`)                                                                               |
+| `Bytes`    | (`bytea`)                                                                                                       |
 
-Атрибут `@db` позволяет использовать типы данных, специфичные для одной или нескольких БД.
-
+Атрибут `@db` позволяет использовать типы данных, специфичные для одной или нескольких БД.
 
 ```shell
 
