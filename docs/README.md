@@ -1,22 +1,22 @@
 # Шпаргалки:
 
-## [JavaScript](Javascript)
+## [JavaScript](javascript)
 
-## [TypeScript](Typescript)
+## [TypeScript](typescript)
 
-## [Rust](Rust)
+## [Rust](rust)
 
-## [GDscript](GDscript)
+## [GDscript](gdscript)
 
-## [Python](Python)
+## [Python](python)
 
-## [README](Mojo/README.md)
+## [README](mojo/README.md)
 
-## [Git](Git)
+## [Git](git)
 
-## [PostgreSQL](PostgreSQL)
+## [PostgreSQL](postgresql)
 
-## [Prisma](Prisma)
+## [Prisma](prisma)
 
 ---
 
