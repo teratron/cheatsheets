@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"a3de9ccd9fa11d1a","type":"text","text":"# login\n\nLog in to dotenv-vault.\n\n```shell\nnpx dotenv-vault@latest login\n```","x":-220,"y":-373,"width":360,"height":173},
+		{"id":"303d2644c9fd34c9","type":"text","text":"# logout\n\nLog out of dotenv-vault.\n\n```shell\nnpx dotenv-vault@latest logout\n```","x":-220,"y":-160,"width":360,"height":173},
+		{"id":"858c8b9ddf1c7ddb","type":"text","text":"# keys\n\nList your `.env.vault` decryption keys for use with deploy:\n\n```shell\n# List all your keys.\nnpx dotenv-vault@latest keys\n\n# List a single environment key.\nnpx dotenv-vault@latest keys production\n```","x":-615,"y":360,"width":435,"height":300},
+		{"id":"6cc0760208435f80","type":"text","text":"# new\n\nConnect to it locally (one-time setup):\n\n```shell\nnpx dotenv-vault@latest new\n```","x":-615,"y":-373,"width":360,"height":173},
+		{"id":"f70585ed3af7e20e","type":"text","text":"# pull\n\nPull it down:\n\n```shell\nnpx dotenv-vault@latest pull\n```","x":-615,"y":80,"width":360,"height":173},
+		{"id":"39c5ee4fb7b8df22","type":"text","text":"# push\n\nPush yours up:\n\n```shell\nnpx dotenv-vault@latest push\n```","x":-220,"y":80,"width":360,"height":173},
+		{"id":"1700671ba771ba36","type":"text","text":"# open\n\nOpen the UI to your env vault.\n\n```shell\nnpx dotenv-vault@latest open\n```","x":180,"y":-373,"width":360,"height":173},
+		{"id":"38a978f6d7dc7d42","type":"text","text":"# build\n\nBuild your encrypted `.env.vault` file.\n\n```shell\nnpx dotenv-vault@latest build\n```","x":180,"y":80,"width":360,"height":173},
+		{"id":"96595f78b7ec028d","type":"text","text":"# help\n\nDisplay help for dotenv-vault.\n\n```shell\nnpx dotenv-vault@latest help\n\n# npx dotenv-vault@latest help [COMMAND]\nnpx dotenv-vault@latest help keys\n```","x":-87,"y":360,"width":455,"height":260}
+	],
+	"edges":[
+		{"id":"58891ca83a6c4073","fromNode":"a3de9ccd9fa11d1a","fromSide":"right","toNode":"1700671ba771ba36","toSide":"left"},
+		{"id":"17c1b36726305837","fromNode":"a3de9ccd9fa11d1a","fromSide":"bottom","toNode":"303d2644c9fd34c9","toSide":"top"},
+		{"id":"442a292793a4c74a","fromNode":"f70585ed3af7e20e","fromSide":"right","toNode":"39c5ee4fb7b8df22","toSide":"left"},
+		{"id":"e54bd8147b3bc86b","fromNode":"6cc0760208435f80","fromSide":"right","toNode":"a3de9ccd9fa11d1a","toSide":"left"},
+		{"id":"142f0a9f408cf8eb","fromNode":"39c5ee4fb7b8df22","fromSide":"left","toNode":"f70585ed3af7e20e","toSide":"right"},
+		{"id":"39410490e0cdaa87","fromNode":"303d2644c9fd34c9","fromSide":"top","toNode":"a3de9ccd9fa11d1a","toSide":"bottom"}
+	]
+}

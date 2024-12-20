@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"154c2ace10edffe0","type":"group","x":-580,"y":-300,"width":290,"height":500,"label":"Layers"},
+		{"id":"f0a1d11906e7a589","type":"group","x":-220,"y":-60,"width":290,"height":260,"color":"6","label":"Slices"},
+		{"id":"f8dfe2a2ff711c9d","type":"group","x":140,"y":-60,"width":290,"height":260,"color":"6","label":"Segments"},
+		{"id":"d8bc8f004c7ba4fc","type":"text","text":"app","x":-560,"y":-280,"width":250,"height":60,"color":"1"},
+		{"id":"b345bb5ec4f55506","type":"text","text":"pages","x":-560,"y":-200,"width":250,"height":60,"color":"2"},
+		{"id":"0543b03b28d4a90d","type":"text","text":"widgets","x":-560,"y":-120,"width":250,"height":60,"color":"5"},
+		{"id":"ca37c77676c916eb","type":"text","text":"features","x":-560,"y":-40,"width":250,"height":60,"color":"4"},
+		{"id":"f66527e14cb89290","type":"text","text":"entities","x":-560,"y":40,"width":250,"height":60,"color":"6"},
+		{"id":"63ff2c9e7df11ee1","type":"text","text":"shared","x":-560,"y":120,"width":250,"height":60,"color":"3"},
+		{"id":"94901bbce3a4991f","type":"text","text":"user","x":-200,"y":-40,"width":250,"height":60},
+		{"id":"ee4b7b19e3e9ebc1","type":"text","text":"post","x":-200,"y":40,"width":250,"height":60},
+		{"id":"d9400b67526996ea","type":"text","text":"comment","x":-200,"y":120,"width":250,"height":60},
+		{"id":"f9051b149956903e","type":"text","text":"ui","x":160,"y":-40,"width":250,"height":60},
+		{"id":"f6f0e81ef69b3fff","type":"text","text":"model","x":160,"y":40,"width":250,"height":60},
+		{"id":"44f3f8849da12970","type":"text","text":"api","x":160,"y":120,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"b3671b952518ab7e","fromNode":"f66527e14cb89290","fromSide":"right","toNode":"f0a1d11906e7a589","toSide":"left","color":"6"},
+		{"id":"e09ba9d240d0e099","fromNode":"ee4b7b19e3e9ebc1","fromSide":"right","toNode":"f8dfe2a2ff711c9d","toSide":"left","color":"6"}
+	]
+}
