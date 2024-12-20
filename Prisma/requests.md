@@ -15,12 +15,13 @@ findUnique({
 })
 ```
 
-Модификатор `?` означает, что поле является опциональным.
+Модификатор`?`означает, что поле является опциональным.
 
-- `condition` — условие для выборки;
-- `fields` — поля для выборки;
-- `relations` — отношения (связанные поля) для выборки;
-- `rejectOnNotFound` — если имеет значение `true`, при отсутствии записи выбрасывается исключение `NotFoundError`. Если имеет значение `false`, при отсутствии записи возвращается `null`.
+- `condition`— условие для выборки;
+- `fields`— поля для выборки;
+- `relations`— отношения (связанные поля) для выборки;
+- `rejectOnNotFound`— если имеет значение`true`, при отсутствии записи выбрасывается исключение`NotFoundError`. Если
+  имеет значение`false`, при отсутствии записи возвращается`null`.
 
 **Пример**
 
@@ -45,11 +46,12 @@ onError(e)
 findFirst({  where?: condition,  select?: fields,  include?: relations,  rejectOnNotFound?: boolean,  distinct?: field,  orderBy?: order,  cursor?: position,  skip?: number,  take?: number})
 ```
 
-- `distinct` — фильтрация по определенному полю;
-- `orderBy` — сортировка по определенному полю и в определенном порядке;
-- `cursor` — позиция начала списка (как правило, `id` или другое уникальное значение);
-- `skip` — количество пропускаемых записей;
-- `take` — количество возвращаемых записей (в данном случае может иметь значение `1` или `-1`: во втором случае возвращается последняя запись.
+- `distinct`— фильтрация по определенному полю;
+- `orderBy`— сортировка по определенному полю и в определенном порядке;
+- `cursor`— позиция начала списка (как правило,`id`или другое уникальное значение);
+- `skip`— количество пропускаемых записей;
+- `take`— количество возвращаемых записей (в данном случае может иметь значение`1`или`-1`: во втором случае возвращается
+  последняя запись.
 
 **Пример**
 
@@ -83,7 +85,7 @@ async function getAllPostsByAuthorId(author_id) {  try {    const posts = await 
 create({  data: _data,  select?: fields,  include?: relations})
 ```
 
-- `_data` — данные создаваемой записи.
+- `_data`— данные создаваемой записи.
 
 **Пример**
 
@@ -149,8 +151,8 @@ async function removeUserById(id) {  try {    await prisma.user.delete({      wh
 createMany({data: _data[],  skipDuplicates?: boolean})
 ```
 
-- `_data[]` — данные для создаваемых записей в виде массива;
-- `skipDuplicates` — при значении `true` создаются только уникальные записи.
+- `_data[]`— данные для создаваемых записей в виде массива;
+- `skipDuplicates`— при значении`true`создаются только уникальные записи.
 
 **Пример**
 
@@ -209,7 +211,7 @@ async function countUsersWithPublishedPosts() {  try {    const count = await pr
 
 ## `aggregate`
 
-Выполняет агрегирование полей.
+Выполняет агрегирование полей.
 
 **Сигнатура**
 
@@ -217,11 +219,11 @@ async function countUsersWithPublishedPosts() {  try {    const count = await pr
 aggregate({  where?: condition,  select?: fields,  cursor?: position,  orderBy?: order,  skip?: number,  take?: number,  _count: count,  _avg: avg,  _sum: sum,  _min: min,  _max: max})
 ```
 
-- `_count` — возвращает количество совпадающих записей или не `null-полей`;
-- `_avg` — возвращает среднее значение определенного поля;
-- `_sum` — возвращает сумму значений определенного поля;
-- `_min` — возвращает наименьшее значение определенного поля;
-- `_max` — возвращает наибольшее значение определенного поля.
+- `_count`— возвращает количество совпадающих записей или не`null-полей`;
+- `_avg`— возвращает среднее значение определенного поля;
+- `_sum`— возвращает сумму значений определенного поля;
+- `_min`— возвращает наименьшее значение определенного поля;
+- `_max`— возвращает наибольшее значение определенного поля.
 
 **Пример**
 
@@ -239,12 +241,14 @@ async function getAllUsersCountAndMinMaxProfileViews() {  try {    const result 
 groupBy({  by?: by,  having?: having,  where?: condition,  orderBy?: order,  skip?: number,  take?: number,  _count: count,  _avg: avg,  _sum: sum,  _min: min,  _max: max})
 ```
 
-- `by` — определяет поле или комбинацию полей для группировки записей;
-- `having` — позволяет фильтровать группы по агрегируемому значению.
+- `by`— определяет поле или комбинацию полей для группировки записей;
+- `having`— позволяет фильтровать группы по агрегируемому значению.
 
 **Пример**
 
-В следующем примере мы выполняем группировку по `country / city`, где среднее значение `profileViews` превышает `100`, и возвращаем общее количество (`_sum`) `profileViews` для каждой группы. Запрос также возвращает количество всех (`_all`) записей в каждой группе и все записи с не `null` значениями поля `city` в каждой группе:
+В следующем примере мы выполняем группировку по`country / city`, где среднее значение`profileViews`превышает`100`, и
+возвращаем общее количество (`_sum`)`profileViews`для каждой группы. Запрос также возвращает количество всех (`_all`)
+записей в каждой группе и все записи с не`null`значениями поля`city`в каждой группе:
 
 ```javascript
 async function getUsers() {  try {    const result = await prisma.user.groupBy({      by: ['country', 'city'],      _count: {        _all: true,        city: true      },      _sum: {        profileViews: true      },      orderBy: {        country: 'desc'      },      having: {        profileViews: {          _avg: {            gt: 100          }        }      }    })    return result  } catch(e) {    onError(e)  }}

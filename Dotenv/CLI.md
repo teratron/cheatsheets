@@ -4,7 +4,8 @@
 
 ### New
 
-Create an env vault for your project. Keep your secrets safe in it. [Read more](https://www.dotenv.org/docs/dotenv-vault/new)
+Create an env vault for your project. Keep your secrets safe in
+it. [Read more](https://www.dotenv.org/docs/dotenv-vault/new)
 
 ```shell
 npx dotenv-vault@latest new
@@ -28,7 +29,8 @@ npx dotenv-vault@latest pull
 
 ### Build
 
-Build your localized encrypted `.env.vault` file for use with deploy. [Read more](https://www.dotenv.org/docs/dotenv-vault/build)
+Build your localized encrypted `.env.vault` file for use with
+deploy. [Read more](https://www.dotenv.org/docs/dotenv-vault/build)
 
 ```shell
 npx dotenv-vault@latest build

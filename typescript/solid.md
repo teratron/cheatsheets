@@ -11,8 +11,9 @@
 ## Single responsibility principle
 
 **Принцип единственной обязанности** - одна конкретная сущность решает одну задачу.
- 
+
 👎**Bad:**
+
 ```typescript
 class Auto {
 	constructor(model: string) {}
@@ -26,6 +27,7 @@ class Auto {
 ```
 
 👍**Good:**
+
 ```typescript
 class Auto {
 	constructor(model: string) {}
@@ -49,6 +51,7 @@ class AutoDB {
 **Принцип открытости/закрытости**
 
 👎**Bad:**
+
 ```typescript
 class Auto {
 	constructor(public model: string) {}
@@ -76,6 +79,7 @@ getPrice(shop)
 ```
 
 👍**Good:**
+
 ```typescript
 abstract class CarPrice {
 	abstract getPrice(): string
@@ -119,6 +123,7 @@ getPrice(shop)
 **Принцип подстановки Лисков**
 
 👎**Bad:**
+
 ```typescript
 class Rectangle {
 	constructor(public width: number, public height: number) {}
@@ -157,6 +162,7 @@ class Square extends Rectangle {
 ```
 
 👍**Good:**
+
 ```typescript
 interface Figure {
 	setWidth(width: number): void
@@ -182,6 +188,7 @@ class Square implements Figure {
 **Принцип разделения интерфейсов**
 
 👎**Bad:**
+
 ```typescript
 interface AutoSet {
 	getTeslaSet(): any
@@ -209,6 +216,7 @@ class Bmw implements AutoSet {
 ```
 
 👍**Good:**
+
 ```typescript
 interface TeslaSet {
 	getTeslaSet(): any
@@ -240,6 +248,7 @@ class Bmw implements BmwSet {
 **Принцип инверсии зависимостей**
 
 👎**Bad:**
+
 ```typescript
 class xmlHttpRequestService {}
 
@@ -263,6 +272,7 @@ class Http {
 ```
 
 👍**Good:**
+
 ```typescript
 class xmlHttpRequestService {
 	open() {}
