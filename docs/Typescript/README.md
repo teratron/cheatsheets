@@ -6,7 +6,7 @@
 - [Типы данных](types.md)
 - [Функции](function.md)
 - [О.О.П.](oop.md)
-- [S.O.L.I.D](Typescript/solid.md)
+- [S.O.L.I.D](solid.md)
 
 ## Установка
 
