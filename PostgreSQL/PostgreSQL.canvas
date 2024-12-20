@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"1d374d4aed49a72d","type":"text","text":"# CREAT","x":-1160,"y":-240,"width":160,"height":60},
+		{"id":"2645ebef88365bd5","type":"text","text":"## DATABASE\n\n```sql\nCREATE DATABASE usersdb;\n```\n\n```sql\nDROP DATABASE usersdb;\n```","x":-780,"y":-460,"width":420,"height":220},
+		{"id":"fb91839f6413db14","type":"text","text":"# DROP","x":-1160,"y":-100,"width":160,"height":60},
+		{"id":"c3388c88d177a030","type":"text","text":"## TABLE\n\n```sql\nCREATE TABLE IF NOT EXISTS customers (\n    Id SERIAL PRIMARY KEY,\n    FirstName CHARACTER VARYING(30),\n    LastName CHARACTER VARYING(30),\n    Email CHARACTER VARYING(30),\n    Age INTEGER\n);\n```\n\n```sql\nDROP TABLE IF EXISTS users CASCADE;\n\n--- `CASCADE` – автоматически удалит или изменит строки из зависимой таблицы, при внесении изменений в главную.\n```\n\n```sql\nALTER TABLE IF EXISTS public.users\n    OWNER to postgres;\n```","x":-780,"y":-140,"width":560,"height":480},
+		{"id":"59d770a1cab058c2","x":-1160,"y":30,"width":160,"height":60,"type":"text","text":"# ALTER"}
+	],
+	"edges":[
+		{"id":"3079fe37c0f968ec","fromNode":"1d374d4aed49a72d","fromSide":"right","toNode":"2645ebef88365bd5","toSide":"left"},
+		{"id":"d6d206517cba1cc0","fromNode":"1d374d4aed49a72d","fromSide":"right","toNode":"c3388c88d177a030","toSide":"left"},
+		{"id":"bf73f2c32ac33be7","fromNode":"fb91839f6413db14","fromSide":"right","toNode":"2645ebef88365bd5","toSide":"left"},
+		{"id":"d175abdfdd72d958","fromNode":"fb91839f6413db14","fromSide":"right","toNode":"c3388c88d177a030","toSide":"left"},
+		{"id":"6047ccbdac70ff92","fromNode":"59d770a1cab058c2","fromSide":"right","toNode":"c3388c88d177a030","toSide":"left"}
+	]
+}

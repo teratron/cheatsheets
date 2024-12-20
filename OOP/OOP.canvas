@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"567c0b9e95f1e495","type":"text","text":"# ООП","x":-100,"y":-340,"width":140,"height":60},
+		{"id":"8f465fbb3a72e85c","type":"file","file":"OOP/Инкапсуляция.md","x":-247,"y":-140,"width":434,"height":300,"color":"4"},
+		{"id":"3a5ceac8267bbe28","type":"file","file":"OOP/Полиморфизм.md","x":220,"y":-140,"width":400,"height":300,"color":"5"},
+		{"id":"72c92eea93cd6c62","type":"file","file":"OOP/Наследование.md","x":-680,"y":-140,"width":410,"height":300,"color":"1"}
+	],
+	"edges":[
+		{"id":"091dc8962f0c9dfc","fromNode":"567c0b9e95f1e495","fromSide":"bottom","toNode":"72c92eea93cd6c62","toSide":"top"},
+		{"id":"6251a0d7cc34ce65","fromNode":"567c0b9e95f1e495","fromSide":"bottom","toNode":"8f465fbb3a72e85c","toSide":"top"},
+		{"id":"3c41f0b7313a5cf3","fromNode":"567c0b9e95f1e495","fromSide":"bottom","toNode":"3a5ceac8267bbe28","toSide":"top"}
+	]
+}
