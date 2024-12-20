@@ -3,7 +3,8 @@
 ← [Назад][back]
 
 **Наследует:**
-[PhysicsBody](physicsbody.md) **<** [CollisionObject](collisionobject.md) **<** [Spatial](spatial.md) **<** [Node](node.md) **<** [Object](object.md)
+[PhysicsBody](physicsbody.md) **<** [CollisionObject](collisionobject.md) **<** [Spatial](spatial.md) **<
+** [Node](node.md) **<** [Object](object.md)
 
 **Унаследовано:**
 [VehicleBody](vehiclebody.md)
@@ -461,10 +462,10 @@ Continuous collision detection пытается предсказать, где �
 
 [bool](bool.md) **sleeping**
 
-| _По умолчанию_ | `false` |
-| --- | --- |
-| _Setter_ | set_sleeping(value) |
-| _Getter_ | is_sleeping() |
+| _По умолчанию_ | `false`             |
+|----------------|---------------------|
+| _Setter_       | set_sleeping(value) |
+| _Getter_       | is_sleeping()       |
 
 Если `true`тело не будет двигаться и не будет вычислять силы, пока его не разбудит другое тело, например, при
 столкновении, или с помощью методов [apply_impulse](#method-apply-impulse) или [add_force](#method-add-force).

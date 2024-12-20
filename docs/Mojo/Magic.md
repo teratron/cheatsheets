@@ -116,7 +116,7 @@ Always exit the shell before changing projects.
 ```shell
 exit
 ```
- 
+
 ```shell
 magic add "python==3.9"
 ```

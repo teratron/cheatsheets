@@ -4,7 +4,8 @@
 
 Создает шаблон Prisma-проекта.
 
-- `--datasource-provider` — провайдер для работы с БД: `sqlite`, `postgresql`, `mysql`, `sqlserver` или `mongodb` (перезаписывает `datasource` из `schema.prisma`);
+- `--datasource-provider` — провайдер для работы с БД: `sqlite`, `postgresql`, `mysql`, `sqlserver` или `mongodb` (
+  перезаписывает `datasource` из `schema.prisma`);
 - `--url` — адрес БД (перезаписывает `DATABASE_URL`).
 
 ```shell
@@ -37,7 +38,8 @@ npx prisma db push
 
 ## `seed`
 
-Выполняет скрипт для наполнения БД начальными (фиктивными) данными. Путь к соответствующему файлу определяется в `package.json`
+Выполняет скрипт для наполнения БД начальными (фиктивными) данными. Путь к соответствующему файлу определяется в
+`package.json`
 
 ```json
 {
@@ -49,9 +51,10 @@ npx prisma db push
 npx prisma seed
 ```
 
-## `migrate` 
+## `migrate`
 
-Это приводит к созданию БД при ее отсутствии, генерации файла `prisma/migrations/migration_name.sql`, выполнению инструкции из этого файла (синхронизации БД со схемой) и генерации (регенерации) клиента (`prisma generate`).
+Это приводит к созданию БД при ее отсутствии, генерации файла `prisma/migrations/migration_name.sql`, выполнению
+инструкции из этого файла (синхронизации БД со схемой) и генерации (регенерации) клиента (`prisma generate`).
 
 - `dev` — выполняет миграцию для разработки;
 - `--name` — название миграции.

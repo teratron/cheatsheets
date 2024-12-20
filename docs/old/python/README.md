@@ -20,12 +20,12 @@
 **[Descriptor](descriptor.md)**:
 
 - **[Bitwise](bitwise.md)**:
-  - `__and__`
-  - `__or__`
-  - `__xor__`
-  - `__lshift__`
-  - `__rshift__`
-  - `__invert__`
+    - `__and__`
+    - `__or__`
+    - `__xor__`
+    - `__lshift__`
+    - `__rshift__`
+    - `__invert__`
 
 **[PyTest](pytest.md)**
 
