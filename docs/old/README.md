@@ -16,7 +16,7 @@
 
 ## [Godot](godot)
 
-## [Python](python)
+## [Python](../python)
 
 - ### [NumPy](numpy)
 - ### [Pandas](pandas)

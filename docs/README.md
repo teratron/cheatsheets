@@ -10,7 +10,7 @@
 
 ## [Python](python)
 
-## [README](mojo/README.md)
+## [README](mojo)
 
 ## [Git](git)
 

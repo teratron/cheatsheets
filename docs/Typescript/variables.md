@@ -56,27 +56,3 @@ var x = 76;
 console.log(y); // ! Ошибка
 let y = 76;
 ```
-
-```typescript
-
-```
-
-```typescript
-
-```
-
-```typescript
-
-```
-
-```typescript
-
-```
-
-```typescript
-
-```
-
-```typescript
-
-```
