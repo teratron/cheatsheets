@@ -102,6 +102,7 @@ function mathOp(
 ): number {
     return op(x, y);
 }
+
 console.log(mathOp(10, 20, sum));      // 30 
 console.log(mathOp(10, 20, multiply)); // 200 
 ```

@@ -8,10 +8,10 @@
 
 ```javascript
 findUnique({
-	where: condition,
-	select?: fields,
-	include?: relations,
-	rejectOnNotFound?: boolean
+    where: condition,
+    select? : fields,
+    include? : relations,
+    rejectOnNotFound? : boolean
 })
 ```
 
@@ -27,12 +27,14 @@ findUnique({
 
 ```javascript
 async function getUserById(id) {
-try {    const user = await prisma.user.findUnique({      where: {        id      }
-})
-return user
-} catch(e) {
-onError(e)
-}
+    try {
+        const user = await prisma.user.findUnique({
+            where: {id}
+        })
+        return user
+    } catch (e) {
+        onError(e)
+    }
 }
 ```
 
@@ -43,7 +45,17 @@ onError(e)
 **Сигнатура**
 
 ```javascript
-findFirst({  where?: condition,  select?: fields,  include?: relations,  rejectOnNotFound?: boolean,  distinct?: field,  orderBy?: order,  cursor?: position,  skip?: number,  take?: number})
+findFirst({
+    where? : condition,
+    select? : fields,
+    include? : relations,
+    rejectOnNotFound? : boolean,
+    distinct? : field,
+    orderBy? : order,
+    cursor? : position,
+    skip? : number,
+    take? : number
+})
 ```
 
 - `distinct`— фильтрация по определенному полю;
@@ -56,7 +68,14 @@ findFirst({  where?: condition,  select?: fields,  include?: relations,  rejectO
 **Пример**
 
 ```javascript
-async function getLastPostByAuthorId(author_id) {  try {    const post = await prisma.post.findFirst({      where: {        author_id      },      orderBy: {        created_at: 'asc'      },      take: -1    })    return post  } catch(e) {    onError(e)  }}
+async function getLastPostByAuthorId(author_id) {
+    try {
+        const post = await prisma.post.findFirst({where: {author_id}, orderBy: {created_at: 'asc'}, take: -1})
+        return post
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `findMany`
@@ -66,13 +85,30 @@ async function getLastPostByAuthorId(author_id) {  try {    const post = await p
 **Сигнатура**
 
 ```javascript
-findMany({  where?: condition,  select?: fields,  include?: relations,  rejectOnNotFound?: boolean,  distinct?: field,  orderBy?: order,  cursor?: position,  skip?: number,  take?: number})
+findMany({
+    where? : condition,
+    select? : fields,
+    include? : relations,
+    rejectOnNotFound? : boolean,
+    distinct? : field,
+    orderBy? : order,
+    cursor? : position,
+    skip? : number,
+    take? : number
+})
 ```
 
 **Пример**
 
 ```javascript
-async function getAllPostsByAuthorId(author_id) {  try {    const posts = await prisma.post.findMany({      where: {        author_id      },      orderBy: {        updated_at: 'desc'      }    })    return posts  } catch(e) {    onError(e)  }}
+async function getAllPostsByAuthorId(author_id) {
+    try {
+        const posts = await prisma.post.findMany({where: {author_id}, orderBy: {updated_at: 'desc'}})
+        return posts
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `create`
@@ -82,7 +118,11 @@ async function getAllPostsByAuthorId(author_id) {  try {    const posts = await 
 **Сигнатура**
 
 ```javascript
-create({  data: _data,  select?: fields,  include?: relations})
+create({
+  data: _data,
+  select? : fields,
+  include? : relations
+})
 ```
 
 - `_data`— данные создаваемой записи.
@@ -90,7 +130,22 @@ create({  data: _data,  select?: fields,  include?: relations})
 **Пример**
 
 ```javascript
-async function createUserWithProfile(data) {  const { email, password, firstName, lastName, age } = data  try {    const hash = await argon2.hash(password)    const user = await prisma.user.create({      data: {        email,        hash,        profile: {          create: {            first_name: firstName,            last_name: lastName,            age          }        }      },      select: {        email: true      },      include: {        profile: true      }    })    return user  } catch(e) {    onError(e)  }}
+async function createUserWithProfile(data) {
+    const {email, password, firstName, lastName, age} = data
+    try {
+        const hash = await argon2.hash(password)
+        const user = await prisma.user.create({
+            data: {
+                email,
+                hash,
+                profile: {create: {first_name: firstName, last_name: lastName, age}}
+            }, select: {email: true}, include: {profile: true}
+        })
+        return user
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `update`
@@ -100,13 +155,31 @@ async function createUserWithProfile(data) {  const { email, password, firstName
 **Сигнатура**
 
 ```javascript
-update({  data: _data,  where: condition,  select?: fields,  include?: relations})
+update({
+  data: _data,
+  where: condition,
+  select? : fields,
+  include? : relations
+})
 ```
 
 **Пример**
 
 ```javascript
-async function updateUserById(id, changes) {  const { email, age } = changes  try {    const user = await prisma.user.update({      where: {        id      },      data: {        email,        profile: {          update: {            age          }        }      },      select: {        email: true      },      include: {        profile: true      }    })    return user  } catch(e) {    onError(e)  }}
+async function updateUserById(id, changes) {
+    const {email, age} = changes
+    try {
+        const user = await prisma.user.update({
+            where: {id},
+            data: {email, profile: {update: {age}}},
+            select: {email: true},
+            include: {profile: true}
+        })
+        return user
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `upsert`
@@ -116,13 +189,33 @@ async function updateUserById(id, changes) {  const { email, age } = changes  tr
 **Сигнатура**
 
 ```javascript
-upsert({  create: _data,  update: _data,  where: condition,  select?: fields,  include?: relations})
+upsert({
+  create: _data,
+  update: _data,
+  where: condition,
+  select? : fields,
+  include? : relations
+})
 ```
 
 **Пример**
 
 ```javascript
-async function updateOrCreateUser(data) {  const { userName, email, password } = data  try {    const hash = await argon2.hash(password)    const user = await prisma.user.create({      where: { user_name: userName },      update: {        email,        hash      },      create: {        email,        hash,        user_name: userName      },      select: { user_name: true, email: true }    })    return user  } catch(e) {    onError(e)  }}
+async function updateOrCreateUser(data) {
+    const {userName, email, password} = data
+    try {
+        const hash = await argon2.hash(password)
+        const user = await prisma.user.create({
+            where: {user_name: userName},
+            update: {email, hash},
+            create: {email, hash, user_name: userName},
+            select: {user_name: true, email: true}
+        })
+        return user
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `delete`
@@ -132,13 +225,23 @@ async function updateOrCreateUser(data) {  const { userName, email, password } =
 **Сигнатура**
 
 ```javascript
-delete({  where: condition,  select?: fields,  include?: relations})
+delete ({
+  where: condition,
+  select? : fields,
+  include? : relations
+})
 ```
 
 **Пример**
 
 ```javascript
-async function removeUserById(id) {  try {    await prisma.user.delete({      where: {        id      }    })  } catch(e) {    onError(e)  }}
+async function removeUserById(id) {
+    try {
+        await prisma.user.delete({where: {id}})
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `createMany`
@@ -148,7 +251,10 @@ async function removeUserById(id) {  try {    await prisma.user.delete({      wh
 **Пример**
 
 ```javascript
-createMany({data: _data[],  skipDuplicates?: boolean})
+createMany({
+    data: _data[],
+    skipDuplicates? : boolean
+})
 ```
 
 - `_data[]`— данные для создаваемых записей в виде массива;
@@ -158,7 +264,14 @@ createMany({data: _data[],  skipDuplicates?: boolean})
 
 ```javascript
 // предположим, что `users` - это массив объектов
-async function createUsers(users) {  try {    const users = await prisma.user.createMany({      data: users    })    return users  } catch(e) {    onError(e)  }}
+async function createUsers(users) {
+    try {
+        const users = await prisma.user.createMany({data: users})
+        return users
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `updateMany`
@@ -168,13 +281,23 @@ async function createUsers(users) {  try {    const users = await prisma.user.cr
 **Сигнатура**
 
 ```javascript
-updateMany({  data: _data[],  where?: condition})
+updateMany({
+    data: _data[],
+    where? : condition
+})
 ```
 
 **Пример**
 
 ```javascript
-async function updateProductsByCategory(category, newDiscount) {  try {    const count = await prisma.product.updateMany({      where: {        category      },      data: {        discount: newDiscount      }    })    return count  } catch(e) {    onError(e)  }}
+async function updateProductsByCategory(category, newDiscount) {
+    try {
+        const count = await prisma.product.updateMany({where: {category}, data: {discount: newDiscount}})
+        return count
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `deleteMany`
@@ -184,13 +307,20 @@ async function updateProductsByCategory(category, newDiscount) {  try {    const
 **Сигнатура**
 
 ```javascript
-deleteMany({  where?: condition})
+deleteMany({where? : condition})
 ```
 
 **Пример**
 
 ```javascript
-async function removeAllPostsByUserId(author_id) {  try {    const count = await prisma.post.deleteMany({      where: {        author_id      }    })    return count  } catch(e) {    onError(e)  }}
+async function removeAllPostsByUserId(author_id) {
+    try {
+        const count = await prisma.post.deleteMany({where: {author_id}})
+        return count
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `count`
@@ -200,13 +330,27 @@ async function removeAllPostsByUserId(author_id) {  try {    const count = await
 **Сигнатура**
 
 ```javascript
-count({  where?: condition,  select?: fields,  cursor?: position,  orderBy?: order,  skip?: number,  take?: number})
+count({
+  where? : condition,
+  select? : fields,
+  cursor? : position,
+  orderBy? : order,
+  skip? : number,
+  take? : number
+})
 ```
 
 **Пример**
 
 ```javascript
-async function countUsersWithPublishedPosts() {  try {    const count = await prisma.user.count({      where: {        post: {          some: {            published: true          }        }      }    })    return count  } catch(e) {    onError(e)  }}
+async function countUsersWithPublishedPosts() {
+    try {
+        const count = await prisma.user.count({where: {post: {some: {published: true}}}})
+        return count
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `aggregate`
@@ -216,7 +360,19 @@ async function countUsersWithPublishedPosts() {  try {    const count = await pr
 **Сигнатура**
 
 ```javascript
-aggregate({  where?: condition,  select?: fields,  cursor?: position,  orderBy?: order,  skip?: number,  take?: number,  _count: count,  _avg: avg,  _sum: sum,  _min: min,  _max: max})
+aggregate({
+    where? : condition,
+    select? : fields,
+    cursor? : position,
+    orderBy? : order,
+    skip? : number,
+    take? : number,
+    _count: count,
+    _avg: avg,
+    _sum: sum,
+    _min: min,
+    _max: max
+})
 ```
 
 - `_count`— возвращает количество совпадающих записей или не`null-полей`;
@@ -228,7 +384,18 @@ aggregate({  where?: condition,  select?: fields,  cursor?: position,  orderBy?:
 **Пример**
 
 ```javascript
-async function getAllUsersCountAndMinMaxProfileViews() {  try {    const result = await prisma.user.aggregate({      _count: {        _all: true      },      _max: {        profileViews: true      },      _min: {        profileViews: true      }    })    return result  } catch(e) {    onError(e)  }}
+async function getAllUsersCountAndMinMaxProfileViews() {
+    try {
+        const result = await prisma.user.aggregate({
+            _count: {_all: true},
+            _max: {profileViews: true},
+            _min: {profileViews: true}
+        })
+        return result
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
 
 ## `groupBy`
@@ -238,7 +405,19 @@ async function getAllUsersCountAndMinMaxProfileViews() {  try {    const result 
 **Сигнатура**
 
 ```javascript
-groupBy({  by?: by,  having?: having,  where?: condition,  orderBy?: order,  skip?: number,  take?: number,  _count: count,  _avg: avg,  _sum: sum,  _min: min,  _max: max})
+groupBy({
+    by? : by,
+    having? : having,
+    where? : condition,
+    orderBy? : order,
+    skip? : number,
+    take? : number,
+    _count: count,
+    _avg: avg,
+    _sum: sum,
+    _min: min,
+    _max: max
+})
 ```
 
 - `by`— определяет поле или комбинацию полей для группировки записей;
@@ -251,5 +430,18 @@ groupBy({  by?: by,  having?: having,  where?: condition,  orderBy?: order,  ski
 записей в каждой группе и все записи с не`null`значениями поля`city`в каждой группе:
 
 ```javascript
-async function getUsers() {  try {    const result = await prisma.user.groupBy({      by: ['country', 'city'],      _count: {        _all: true,        city: true      },      _sum: {        profileViews: true      },      orderBy: {        country: 'desc'      },      having: {        profileViews: {          _avg: {            gt: 100          }        }      }    })    return result  } catch(e) {    onError(e)  }}
+async function getUsers() {
+    try {
+        const result = await prisma.user.groupBy({
+            by: ['country', 'city'],
+            _count: {_all: true, city: true},
+            _sum: {profileViews: true},
+            orderBy: {country: 'desc'},
+            having: {profileViews: {_avg: {gt: 100}}}
+        })
+        return result
+    } catch (e) {
+        onError(e)
+    }
+}
 ```
