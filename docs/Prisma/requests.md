@@ -70,7 +70,11 @@ findFirst({
 ```javascript
 async function getLastPostByAuthorId(author_id) {
     try {
-        const post = await prisma.post.findFirst({where: {author_id}, orderBy: {created_at: 'asc'}, take: -1})
+        const post = await prisma.post.findFirst({
+            where: {author_id},
+            orderBy: {created_at: 'asc'},
+            take: -1
+        })
         return post
     } catch (e) {
         onError(e)
@@ -103,7 +107,10 @@ findMany({
 ```javascript
 async function getAllPostsByAuthorId(author_id) {
     try {
-        const posts = await prisma.post.findMany({where: {author_id}, orderBy: {updated_at: 'desc'}})
+        const posts = await prisma.post.findMany({
+            where: {author_id},
+            orderBy: {updated_at: 'desc'}
+        })
         return posts
     } catch (e) {
         onError(e)
@@ -138,8 +145,14 @@ async function createUserWithProfile(data) {
             data: {
                 email,
                 hash,
-                profile: {create: {first_name: firstName, last_name: lastName, age}}
-            }, select: {email: true}, include: {profile: true}
+                profile: {
+                    create: {
+                        first_name: firstName,
+                        last_name: lastName,
+                        age
+            }}},
+            select: {email: true},
+            include: {profile: true}
         })
         return user
     } catch (e) {
@@ -171,7 +184,11 @@ async function updateUserById(id, changes) {
     try {
         const user = await prisma.user.update({
             where: {id},
-            data: {email, profile: {update: {age}}},
+            data: {
+                email,
+                profile: {
+                    update: {age}
+            }},
             select: {email: true},
             include: {profile: true}
         })
@@ -292,7 +309,10 @@ updateMany({
 ```javascript
 async function updateProductsByCategory(category, newDiscount) {
     try {
-        const count = await prisma.product.updateMany({where: {category}, data: {discount: newDiscount}})
+        const count = await prisma.product.updateMany({
+            where: {category},
+            data: {discount: newDiscount}
+        })
         return count
     } catch (e) {
         onError(e)
@@ -315,7 +335,9 @@ deleteMany({where? : condition})
 ```javascript
 async function removeAllPostsByUserId(author_id) {
     try {
-        const count = await prisma.post.deleteMany({where: {author_id}})
+        const count = await prisma.post.deleteMany({
+            where: {author_id}
+        })
         return count
     } catch (e) {
         onError(e)
@@ -345,7 +367,12 @@ count({
 ```javascript
 async function countUsersWithPublishedPosts() {
     try {
-        const count = await prisma.user.count({where: {post: {some: {published: true}}}})
+        const count = await prisma.user.count({
+            where: {
+                post: {
+                    some: {
+                        published: true
+        }}}})
         return count
     } catch (e) {
         onError(e)
