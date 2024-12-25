@@ -39,16 +39,16 @@ datasource db {
 
 Определим в схеме модели для пользователя (`User`) и поста (`Post`):
 
-```
+```prisma
 model User {
   id         String   @id @default(uuid()) @db.Uuid
   email      String   @unique
   hash       String   @map("password_hash")
-  first_name String?
-  last_name  String?
-  age        Int?
+  first_name String? 
+  last_name  String? 
+  age        Int?    
   role       Role     @default(USER)
-  posts      Post[]
+  posts      Post[]  
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -57,10 +57,10 @@ model User {
 
 model Post {
   id         String   @id @default(uuid())
-  title      String
-  content    String
-  published  Boolean
-  author_id  String
+  title     String  
+  content   String  
+  published Boolean 
+  author_id String  
   author     User     @relation(fields: [author_id], references: [id])
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -77,3 +77,10 @@ enum Role {
 ## `enum`
 
 Перечисление.
+
+```prisma
+enum Role {
+  USER
+  ADMIN
+}
+```

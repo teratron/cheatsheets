@@ -9,9 +9,9 @@
 ```javascript
 findUnique({
     where: condition,
-    select? : fields,
-    include? : relations,
-    rejectOnNotFound? : boolean
+  select? : fields,
+  include? : relations,
+  rejectOnNotFound? : boolean
 })
 ```
 
@@ -29,7 +29,9 @@ findUnique({
 async function getUserById(id) {
     try {
         const user = await prisma.user.findUnique({
-            where: {id}
+          where: {
+            id
+          }
         })
         return user
     } catch (e) {
@@ -46,15 +48,15 @@ async function getUserById(id) {
 
 ```javascript
 findFirst({
-    where? : condition,
-    select? : fields,
-    include? : relations,
-    rejectOnNotFound? : boolean,
-    distinct? : field,
-    orderBy? : order,
-    cursor? : position,
-    skip? : number,
-    take? : number
+  where? : condition,
+  select? : fields,
+  include? : relations,
+  rejectOnNotFound? : boolean,
+  distinct? : field,
+  orderBy? : order,
+  cursor? : position,
+  skip? : number,
+  take? : number
 })
 ```
 
@@ -62,8 +64,9 @@ findFirst({
 - `orderBy`— сортировка по определенному полю и в определенном порядке;
 - `cursor`— позиция начала списка (как правило,`id`или другое уникальное значение);
 - `skip`— количество пропускаемых записей;
-- `take`— количество возвращаемых записей (в данном случае может иметь значение`1`или`-1`: во втором случае возвращается
-  последняя запись.
+- `take`— количество возвращаемых записей (в данном случае может иметь значение `1` или `-1`: во втором случае
+  возвращается
+  последняя запись).
 
 **Пример**
 
@@ -71,8 +74,12 @@ findFirst({
 async function getLastPostByAuthorId(author_id) {
     try {
         const post = await prisma.post.findFirst({
-            where: {author_id},
-            orderBy: {created_at: 'asc'},
+          where: {
+            author_id
+          },
+          orderBy: {
+            created_at: 'asc'
+          },
             take: -1
         })
         return post
@@ -90,15 +97,15 @@ async function getLastPostByAuthorId(author_id) {
 
 ```javascript
 findMany({
-    where? : condition,
-    select? : fields,
-    include? : relations,
-    rejectOnNotFound? : boolean,
-    distinct? : field,
-    orderBy? : order,
-    cursor? : position,
-    skip? : number,
-    take? : number
+  where? : condition,
+  select? : fields,
+  include? : relations,
+  rejectOnNotFound? : boolean,
+  distinct? : field,
+  orderBy? : order,
+  cursor? : position,
+  skip? : number,
+  take? : number
 })
 ```
 
@@ -108,8 +115,12 @@ findMany({
 async function getAllPostsByAuthorId(author_id) {
     try {
         const posts = await prisma.post.findMany({
-            where: {author_id},
-            orderBy: {updated_at: 'desc'}
+          where: {
+            author_id
+          },
+          orderBy: {
+            updated_at: 'desc'
+          }
         })
         return posts
     } catch (e) {
@@ -150,9 +161,15 @@ async function createUserWithProfile(data) {
                         first_name: firstName,
                         last_name: lastName,
                         age
-            }}},
-            select: {email: true},
-            include: {profile: true}
+                    }
+                }
+            },
+          select: {
+            email: true
+          },
+          include: {
+            profile: true
+          }
         })
         return user
     } catch (e) {
@@ -183,14 +200,23 @@ async function updateUserById(id, changes) {
     const {email, age} = changes
     try {
         const user = await prisma.user.update({
-            where: {id},
+          where: {
+            id
+          },
             data: {
                 email,
                 profile: {
-                    update: {age}
-            }},
-            select: {email: true},
-            include: {profile: true}
+                  update: {
+                    age
+                  }
+                }
+            },
+          select: {
+            email: true
+          },
+          include: {
+            profile: true
+          }
         })
         return user
     } catch (e) {
@@ -223,10 +249,22 @@ async function updateOrCreateUser(data) {
     try {
         const hash = await argon2.hash(password)
         const user = await prisma.user.create({
-            where: {user_name: userName},
-            update: {email, hash},
-            create: {email, hash, user_name: userName},
-            select: {user_name: true, email: true}
+          where: {
+            user_name: userName
+          },
+          update: {
+            email,
+            hash
+          },
+          create: {
+            email,
+            hash,
+            user_name: userName
+          },
+          select: {
+            user_name: true,
+            email: true
+          }
         })
         return user
     } catch (e) {
@@ -254,7 +292,11 @@ delete ({
 ```javascript
 async function removeUserById(id) {
     try {
-        await prisma.user.delete({where: {id}})
+      await prisma.user.delete({
+        where: {
+          id
+        }
+      })
     } catch (e) {
         onError(e)
     }
@@ -270,7 +312,7 @@ async function removeUserById(id) {
 ```javascript
 createMany({
     data: _data[],
-    skipDuplicates? : boolean
+  skipDuplicates? : boolean
 })
 ```
 
@@ -283,7 +325,9 @@ createMany({
 // предположим, что `users` - это массив объектов
 async function createUsers(users) {
     try {
-        const users = await prisma.user.createMany({data: users})
+      const users = await prisma.user.createMany({
+        data: users
+      })
         return users
     } catch (e) {
         onError(e)
@@ -300,7 +344,7 @@ async function createUsers(users) {
 ```javascript
 updateMany({
     data: _data[],
-    where? : condition
+  where? : condition
 })
 ```
 
@@ -310,8 +354,12 @@ updateMany({
 async function updateProductsByCategory(category, newDiscount) {
     try {
         const count = await prisma.product.updateMany({
-            where: {category},
-            data: {discount: newDiscount}
+          where: {
+            category
+          },
+          data: {
+            discount: newDiscount
+          }
         })
         return count
     } catch (e) {
@@ -327,7 +375,9 @@ async function updateProductsByCategory(category, newDiscount) {
 **Сигнатура**
 
 ```javascript
-deleteMany({where? : condition})
+deleteMany({
+  where? : condition
+})
 ```
 
 **Пример**
@@ -336,7 +386,9 @@ deleteMany({where? : condition})
 async function removeAllPostsByUserId(author_id) {
     try {
         const count = await prisma.post.deleteMany({
-            where: {author_id}
+          where: {
+            author_id
+          }
         })
         return count
     } catch (e) {
@@ -372,7 +424,10 @@ async function countUsersWithPublishedPosts() {
                 post: {
                     some: {
                         published: true
-        }}}})
+                    }
+                }
+            }
+        })
         return count
     } catch (e) {
         onError(e)
@@ -388,12 +443,12 @@ async function countUsersWithPublishedPosts() {
 
 ```javascript
 aggregate({
-    where? : condition,
-    select? : fields,
-    cursor? : position,
-    orderBy? : order,
-    skip? : number,
-    take? : number,
+  where? : condition,
+  select? : fields,
+  cursor? : position,
+  orderBy? : order,
+  skip? : number,
+  take? : number,
     _count: count,
     _avg: avg,
     _sum: sum,
@@ -414,9 +469,15 @@ aggregate({
 async function getAllUsersCountAndMinMaxProfileViews() {
     try {
         const result = await prisma.user.aggregate({
-            _count: {_all: true},
-            _max: {profileViews: true},
-            _min: {profileViews: true}
+          _count: {
+            _all: true
+          },
+          _max: {
+            profileViews: true
+          },
+          _min: {
+            profileViews: true
+          }
         })
         return result
     } catch (e) {
@@ -433,12 +494,12 @@ async function getAllUsersCountAndMinMaxProfileViews() {
 
 ```javascript
 groupBy({
-    by? : by,
-    having? : having,
-    where? : condition,
-    orderBy? : order,
-    skip? : number,
-    take? : number,
+  by? : by,
+  having? : having,
+  where? : condition,
+  orderBy? : order,
+  skip? : number,
+  take? : number,
     _count: count,
     _avg: avg,
     _sum: sum,
@@ -461,10 +522,23 @@ async function getUsers() {
     try {
         const result = await prisma.user.groupBy({
             by: ['country', 'city'],
-            _count: {_all: true, city: true},
-            _sum: {profileViews: true},
-            orderBy: {country: 'desc'},
-            having: {profileViews: {_avg: {gt: 100}}}
+          _count: {
+            _all: true,
+            city: true
+          },
+          _sum: {
+            profileViews: true
+          },
+          orderBy: {
+            country: 'desc'
+          },
+          having: {
+            profileViews: {
+              _avg: {
+                gt: 100
+              }
+            }
+          }
         })
         return result
     } catch (e) {
@@ -472,3 +546,200 @@ async function getUsers() {
     }
 }
 ```
+
+## Вложенные запросы
+
+### `create`
+
+`create: { data } | [{ data1 }, { data2 }, ...{ dataN }]` — добавляет новую связанную запись или набор записей в
+родительскую запись. `create` доступен при создании (`create`) новой родительской записи или обновлении (`update`)
+существующей родительской записи.
+
+```javascript
+const user = await prisma.user.create({
+  data: {
+    email,
+    profile: {
+      // вложенный запрос
+      create: {
+        first_name,
+        last_name
+      }
+    }
+  }
+})
+```
+
+### `createMany`
+
+`createMany: [{ data1 }, { data2 }, ...{ dataN }]` — добавляет набор новых связанных записей в родительскую запись.
+createMany доступен при создании (`create`) новой родительской записи или обновлении (`update`) существующей
+родительской записи.
+
+```javascript
+const userWithPosts = await prisma.user.create({
+  data: {
+    email,
+    posts: {
+      // !
+      createMany: {
+        data: posts
+      }
+    }
+  }
+})
+```
+
+### `update`
+
+`update: { data } | [{ data1 }, { data2 }, ...{ dataN }]` — обновляет одну или более связанных записей.
+
+```javascript
+const user = await prisma.user.update({
+  where: {
+    email
+  },
+  data: {
+    profile: {
+      // !
+      update: {
+        age
+      }
+    }
+  }
+})
+```
+
+### `updateMany`
+
+`updateMany: { data } | [{ data1 }, { data2 }, ...{ dataN }]` — обновляет массив связанных записей. Поддерживается
+фильтрация.
+
+```javascript
+const result = await prisma.user.update({
+  where: {
+    id
+  },
+  data: {
+    posts: {
+      // !
+      updateMany: {
+        where: {
+          published: false
+        },
+        data: {
+          like_count: 0
+        }
+      }
+    }
+  }
+})
+```
+
+### `upsert`
+
+`upsert: { data } | [{ data1 }, { data2 }, ...{ dataN }]` — обновляет существующую связанную запись или создает новую.
+
+```javascript
+const user = await prisma.user.update({
+  where: {
+    email
+  },
+  data: {
+    profile: {
+      // !
+      upsert: {
+        create: {
+          age
+        },
+        update: {
+          age
+        }
+      }
+    }
+  }
+})
+```
+
+### `delete`
+
+`delete: boolean | { data } | [{ data1 }, { data2 }, ...{ dataN }]` — удаляет связанную запись. Родительская запись при
+этом не удаляется.
+
+```javascript
+const user = await prisma.user.update({
+  where: {
+    email
+  },
+  data: {
+    profile: {
+      delete: true
+    }
+  }
+})
+```
+
+### `deleteMany`
+
+`deleteMany: { data } | [{ data1 }, { data2 }, ...{ dataN }]` — удаляет связанные записи. Поддерживается фильтрация.
+
+```javascript
+const user = await prisma.user.update({
+  where: {
+    id
+  },
+  data: {
+    age,
+    posts: {
+      // !
+      deleteMany: {}
+    }
+  }
+})
+```
+
+### `set`
+
+`set: { data } | [{ data1 }, { data2 }, ...{ dataN }]` — перезаписывает значение связанной записи.
+
+```javascript
+const userWithPosts = await prisma.user.update({
+  where: {
+    email
+  },
+  data: {
+    posts: {
+      // !
+      set: newPosts
+    }
+  }
+})
+```
+
+### `connect`
+
+Подключает запись к существующей связанной записи по идентификатору или уникальному полю.
+
+```javascript
+const user = await prisma.post.create({
+  data: {
+    title,
+    content,
+    author: {
+      connect: {
+        email
+      }
+    }
+  }
+})
+```
+
+### `connectOrCreate`
+
+Подключает запись к существующей связанной записи по идентификатору или уникальному полю либо создает связанную запись
+при отсутствии таковой.
+
+### `disconnect`
+
+Отключает родительскую запись от связанной без удаления последней. `disconnect` доступен только если отношение является
+опциональным.
