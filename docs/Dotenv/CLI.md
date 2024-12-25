@@ -4,8 +4,8 @@
 
 ### New
 
-Create an env vault for your project. Keep your secrets safe in
-it. [Read more](https://www.dotenv.org/docs/dotenv-vault/new)
+Create an env vault for your project.
+Keep your secrets safe init. [Read more](https://www.dotenv.org/docs/dotenv-vault/new)
 
 ```shell
 npx dotenv-vault@latest new
@@ -55,9 +55,6 @@ Open the UI to your env vault. Manage multiple environments. [Read more](https:/
 ```shell
 npx dotenv-vault@latest open
 ```
-
-## More commands
----
 
 ### Login
 
