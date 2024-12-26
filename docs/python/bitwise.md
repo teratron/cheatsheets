@@ -79,36 +79,6 @@ print(f'~d1 = {~d1}')
 # ~d1 = Data[-11]
 ```
 
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
-
-### blank
-
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
-
 ← [Назад][back]
 
 [back]: <> "Назад к оглавлению"

@@ -1,8 +1,10 @@
-# blank
+# if
 
 ← [Назад][back]
 
+```gdscript
 
+```
 
 ← [Назад][back]
 

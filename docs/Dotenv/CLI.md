@@ -58,7 +58,7 @@ npx dotenv-vault@latest open
 
 ### Login
 
-Log in to dotenv-vault. [Read more](https://www.dotenv.org/docs/dotenv-vault/login)
+Log in to `dotenv-vault`. [Read more](https://www.dotenv.org/docs/dotenv-vault/login)
 
 ```shell
 npx dotenv-vault@latest login
@@ -66,7 +66,7 @@ npx dotenv-vault@latest login
 
 ### Logout
 
-Log out of dotenv-vault. [Read more](https://www.dotenv.org/docs/dotenv-vault/logout)
+Log out of `dotenv-vault`. [Read more](https://www.dotenv.org/docs/dotenv-vault/logout)
 
 ```shell
 npx dotenv-vault@latest logout
@@ -74,7 +74,7 @@ npx dotenv-vault@latest logout
 
 ### Whoami
 
-Display the current logged in user. [Read more](https://www.dotenv.org/docs/dotenv-vault/whoami)
+Display the current logged-in user. [Read more](https://www.dotenv.org/docs/dotenv-vault/whoami)
 
 ```shell
 npx dotenv-vault@latest whoami
@@ -90,7 +90,7 @@ npx dotenv-vault@latest version
 
 ### Rotatekey
 
-Rotate a project environment's DOTENV_KEY. [Read more](https://www.dotenv.org/docs/dotenv-vault/rotatekey)
+Rotate a project environment's `DOTENV_KEY`. [Read more](https://www.dotenv.org/docs/dotenv-vault/rotatekey)
 
 ```shell
 npx dotenv-vault@latest rotatekey
@@ -98,7 +98,7 @@ npx dotenv-vault@latest rotatekey
 
 ### Status
 
-Check dotenv-vault operational status. [Read more](https://www.dotenv.org/docs/dotenv-vault/status)
+Check `dotenv-vault` operational status. [Read more](https://www.dotenv.org/docs/dotenv-vault/status)
 
 ```shell
 npx dotenv-vault@latest status
@@ -106,7 +106,7 @@ npx dotenv-vault@latest status
 
 ### Help
 
-Display help for dotenv-vault. [Read more](https://www.dotenv.org/docs/dotenv-vault/help)
+Display help for `dotenv-vault`. [Read more](https://www.dotenv.org/docs/dotenv-vault/help)
 
 ```shell
 npx dotenv-vault@latest help

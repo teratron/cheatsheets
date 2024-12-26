@@ -1,3 +1,5 @@
+# Magic
+
 **magic** - A high level package management tool by Modular for developing with Mojo and MAX.
 
 To get started, run `magic init` in your project directory.

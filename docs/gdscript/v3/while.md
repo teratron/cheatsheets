@@ -1,8 +1,10 @@
-# blank
+# while
 
 ← [Назад][back]
 
+```gdscript
 
+```
 
 ← [Назад][back]
 

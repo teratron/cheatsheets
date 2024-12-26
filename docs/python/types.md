@@ -238,21 +238,9 @@ message = "Age: " + str(age)  # Age: 22
 print(message)
 ```
 
-```python
 
-```
 
-```python
 
-```
-
-```python
-
-```
-
-```python
-
-```
 
 ← [Назад][back]
 

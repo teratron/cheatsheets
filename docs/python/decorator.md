@@ -208,10 +208,6 @@ else:
     asyncio.run(print_me())
 ```
 
-```python
-
-```
-
 ---
 
 ← [Назад][back]

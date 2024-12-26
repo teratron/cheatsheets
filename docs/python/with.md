@@ -89,9 +89,6 @@ with demo('counting'):
 # counting: 1.32399988174
 ```
 
-```python
-
-```
 
 ← [Назад][back]
 

@@ -14,7 +14,7 @@
 
 ## [Rust](rust)
 
-## [Godot](godot)
+## [Godot](../gdscript/v3)
 
 ## [Python](../python)
 

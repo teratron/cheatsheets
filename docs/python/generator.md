@@ -103,10 +103,6 @@ for name in tree('C:\Users\XXX\Downloads\Test'):
     print name
 ```
 
-```python
-
-```
-
 ← [Назад][back]
 
 [back]: <> "Назад к оглавлению"

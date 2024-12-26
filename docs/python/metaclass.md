@@ -66,26 +66,6 @@ class AlwaysOk(Strategy):
 Strategy.for_name('always_ok').validate_credentials('john', 'x')
 ```
 
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
-
 ← [Назад][back]
 
 [back]: <> "Назад к оглавлению"

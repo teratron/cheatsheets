@@ -76,18 +76,6 @@ class Stack(Generic[T]):
         return not self.items
 ```
 
-```python
-
-```
-
-```python
-
-```
-
-```python
-
-```
-
 ← [Назад][back]
 
 [back]: <> "Назад к оглавлению"
