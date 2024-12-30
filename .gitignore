@@ -1,4 +1,5 @@
-.obsidian/plugins/
-docs/.obsidian/*.[0-9].json
+#.obsidian/plugins/
+#docs/.obsidian/*.[0-9].json
+.obsidian/
 .idea/
 .sync/
