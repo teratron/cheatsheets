@@ -9,9 +9,9 @@
 ```javascript
 findUnique({
     where: condition,
-  select? : fields,
-  include? : relations,
-  rejectOnNotFound? : boolean
+    select? : fields,
+    include? : relations,
+    rejectOnNotFound? : boolean
 })
 ```
 

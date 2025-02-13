@@ -13,7 +13,7 @@
 - [[#Interface segregation principle]]
 - [[#Dependency inversion principle]]
 
-![](assets/solid.png)
+![](solid.png)
 
 ### Single responsibility principle
 
