@@ -58,4 +58,4 @@
 
 ← [Назад][back]
 
-[back]: <../old/postgresql> "Назад к оглавлению"
+[back]: <../postgresql> "Назад к оглавлению"

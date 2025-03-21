@@ -18,6 +18,8 @@
 
 ## [Prisma](prisma)
 
+## [FSD](fsd)
+
 ---
 
 ## Tools:

@@ -1,5 +1,7 @@
 # Typescript
 
+← [Назад к перечню шпаргалок][back]
+
 ## Содержание
 
 - [Переменные и константы](variables.md)
@@ -85,3 +87,7 @@ tsc --noEmitOnError app.ts
 ---
 
 *Источник*: [Руководство по TypeScript](https://metanit.com/web/typescript)
+
+← [Назад к перечню шпаргалок][back]
+
+[back]: <../.> "Назад к перечню шпаргалок"

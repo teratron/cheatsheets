@@ -1,5 +1,9 @@
 # CLI
 
+← [Назад][back]
+
+---
+
 ## Commands
 
 ### New
@@ -114,3 +118,9 @@ npx dotenv-vault@latest help
 # npx dotenv-vault@latest help [COMMAND]
 npx dotenv-vault@latest help keys
 ```
+
+---
+
+← [Назад][back]
+
+[back]: <.> "Назад к оглавлению"
