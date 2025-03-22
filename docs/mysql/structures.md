@@ -47,13 +47,13 @@ CREATE TABLE IF NOT EXISTS Customers
 То есть в таблице OrderLines не может быть двух строк, где для обоих из этих полей одновременно были бы одни и те же
 значения.
 
-```mysql
+```sql
 CREATE TABLE OrderLines
 (
     OrderId   INT,
     ProductId INT,
     Quantity  INT,
-    Price MONEY,
+    Price     MONEY,
     PRIMARY KEY (OrderId, ProductId)
 );
 ```

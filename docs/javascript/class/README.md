@@ -8,16 +8,20 @@
 класса.
 
 ```javascript
-class Person{
+class Person {
 }
+
 // или
-let Person = class{}
+let Person = class {
+}
 ```
 
 После этого мы можем создать объекты класса с помощью конструктора:
 
 ```javascript
-class Person{}
+class Person {
+}
+
 let tom = new Person();
 let bob = new Person();
 ```
@@ -30,11 +34,12 @@ let bob = new Person();
 Также класс может содержать свойства и методы:
 
 ```javascript
-class Person{
+class Person {
     constructor(name, age) {
         this.name = name;
         this.age = age;
     }
+
     display() {
         console.log(this.name, this.age);
     }
@@ -53,27 +58,30 @@ console.log(tom.name);  // Tom
 Наследование позволяет сократить объем кода в классах-наследниках.
 
 ```javascript
-class Person{
+class Person {
     constructor(name, age) {
         this.name = name;
         this.age = age;
     }
+
     display() {
         console.log(this.name, this.age);
     }
 }
 
-class Employee extends Person{
+class Employee extends Person {
     constructor(name, age, company) {
         super(name, age);
         this.company = company;
     }
+
     display() {
         super.display();
         console.log("Employee in", this.company);
     }
+
     work() {
-    console.log(this.name, "is hard working");
+        console.log(this.name, "is hard working");
     }
 }
 
@@ -96,15 +104,17 @@ bob.work();
 Для их определения применяется оператор `static`.
 
 ```javascript
-class Person{
+class Person {
     constructor(name, age) {
         this.name = name;
         this.age = age;
     }
+
     // В данном случае определен статический метод nameToUpper().
     static nameToUpper(person) {
         return person.name.toUpperCase();
     }
+
     display() {
         console.log(this.name, this.age);
     }

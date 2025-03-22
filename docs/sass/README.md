@@ -22,13 +22,13 @@
 
 ```css
 .sidebar {
-  width: 300px; 
+    width: 300px;
 }
 
 @media screen and (orientation: landscape) {
-  .sidebar {
-    width: 500px; 
-  } 
+    .sidebar {
+        width: 500px;
+    }
 }
 ```
 
@@ -46,9 +46,9 @@
 
 ```css
 @media screen and (orientation: landscape) {
-  .sidebar {
-    width: 500px; 
-  } 
+    .sidebar {
+        width: 500px;
+    }
 }
 ```
 
@@ -68,9 +68,9 @@ $value: 1.5;
 
 ```css
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
-  .sidebar {
-    width: 500px; 
-  } 
+    .sidebar {
+        width: 500px;
+    }
 }
 ```
 
@@ -92,7 +92,7 @@ $value: 1.5;
 
 ```css
 body.firefox .header:before {
-  content: "Hi, Firefox users!";
+    content: "Hi, Firefox users!";
 }
 ```
 
@@ -100,34 +100,161 @@ body.firefox .header:before {
 
 ```scss
 // Узнаем значение элемента списка по индексу:
-nth(10px 20px 30px, 1)
-nth((Helvetica, Arial, sans-serif), 3)
-nth((width: 10px, length: 20px), 2)
+nth
+(
+10
+px
+
+20
+px
+
+30
+px,
+
+1
+)
+nth
+(
+(
+Helvetica, Arial, sans-serif
+
+)
+,
+3
+)
+nth
+(
+(
+width:
+
+10
+px, length:
+
+20
+px
+
+)
+,
+2
+)
 
 // Объединяем списки в один:
-join(10px 20px, 30px 40px)
-join((blue, red), (#abc, #def))
-join(10px, 20px)
+join
+(
+10
+px
+
+20
+px,
+
+30
+px
+
+40
+px
+
+)
+join
+(
+(
+blue, red
+
+)
+,
+(
+#abc, #def
+
+)
+)
+join
+(
+10
+px,
+
+20
+px
+
+)
 
 // Добавляем в список элементы:
-append(10px 20px, 30px)
-append((blue, red), green)
-append(10px 20px, 30px 40px)
+append
+(
+10
+px
+
+20
+px,
+
+30
+px
+
+)
+append
+(
+(
+blue, red
+
+)
+,
+green
+
+)
+append
+(
+10
+px
+
+20
+px,
+
+30
+px
+
+40
+px
+
+)
 ```
 
 ```css
 /* Узнаем значение элемента списка по индексу: */
-10px
+10
+px
 sans-serif
-length, 20px
+length,
+
+20
+px
 
 /* Объединяем списки в один: */
-10px 20px 30px 40px
+10
+px
+
+20
+px
+
+30
+px
+
+40
+px
 blue, red, #abc, #def
-10px 20px
+
+10
+px
+
+20
+px
 
 /* Добавляем в список элементы: */
-10px 20px 30px
+10
+px
+
+20
+px
+
+30
+px
 blue, red, green
 ```
 
@@ -135,11 +262,11 @@ blue, red, green
 
 ```scss
 $status-colors: (
-  primary: #000,
-  success: #27BA6C,
-  info: #03a9f4,
-  warning: #FF8833,
-  danger: #ff1a1a
+        primary: #000,
+        success: #27BA6C,
+        info: #03a9f4,
+        warning: #FF8833,
+        danger: #ff1a1a
 );
 
 .message {
@@ -153,23 +280,23 @@ $status-colors: (
 
 ```css
 .message--primary {
-  background: #000;
+    background: #000;
 }
 
 .message--success {
-  background: #27ba6c;
+    background: #27ba6c;
 }
 
 .message--info {
-  background: #03a9f4;
+    background: #03a9f4;
 }
 
 .message--warning {
-  background: #f83;
+    background: #f83;
 }
 
 .message--danger {
-  background: #ff1a1a;
+    background: #ff1a1a;
 }
 ```
 
@@ -183,13 +310,13 @@ $status-colors: (
 $name: foo;
 $attr: border;
 p.#{$name} {
-#{$attr}-color: blue;
+  #{$attr}-color: blue;
 }
 ```
 
 ```css
 p.foo {
-border-color: blue;
+    border-color: blue;
 }
 ```
 
@@ -197,15 +324,15 @@ border-color: blue;
 
 ```scss
 p {
-$font-size: 12px;
-$line-height: 30px;
-font: #{$font-size}/#{$line-height};
+  $font-size: 12px;
+  $line-height: 30px;
+  font: #{$font-size}/#{$line-height};
 }
 ```
 
 ```css
 p {
-font: 12px/30px;
+    font: 12px/30px;
 }
 ```
 
@@ -213,15 +340,15 @@ font: 12px/30px;
 
 ```scss
 @mixin does-parent-exist {
-    @if & {
-        &:hover {
-            color: red;
-        }
-    } @else {
-        a {
-            color: red;
-        }
+  @if & {
+    &:hover {
+      color: red;
     }
+  } @else {
+    a {
+      color: red;
+    }
+  }
 }
 ```
 
@@ -245,8 +372,8 @@ $new_content: "Как пройти в библиотеку?" !default;
 
 ```css
 #main {
-  content: "Тестовый текст";
-  new-content: "Как пройти в библиотеку?"; 
+    content: "Тестовый текст";
+    new-content: "Как пройти в библиотеку?";
 }
 ```
 
@@ -263,7 +390,7 @@ $content: "НЕ-null контент" !default;
 
 ```css
 #main {
-  content: "НЕ-null контент"; 
+    content: "НЕ-null контент";
 }
 ```
 
