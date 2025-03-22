@@ -2,8 +2,7 @@
 
 *Теги*: [[Rust]], [[Преобразования]]
 
-Как и `From` и `Into`, `TryFrom` и `TryInto` - обобщённые типажи для конвертации между типами. Но в отличии от `From`/
-`Into`, типажи `TryFrom`/`TryInto` используются для преобразований с ошибками и возвращают `Result`.
+Как и `From` и `Into`, `TryFrom` и `TryInto` - обобщённые типажи для конвертации между типами. Но в отличии от `From`/`Into`, типажи `TryFrom`/`TryInto` используются для преобразований с ошибками и возвращают `Result`.
 
 ```rust
 use std::convert::{TryFrom, TryInto};
@@ -35,12 +34,4 @@ fn main() {
     let result: Result<EvenNumber, ()> = 5i32.try_into();
     assert_eq!(result, Err(()));
 }
-```
-
-```rust
-
-```
-
-```rust
-
 ```

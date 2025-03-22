@@ -34,7 +34,7 @@ cargo test --help
 cargo test -- --help
 ```
 
-### assert!
+## `assert!`
 
 ```rust
 #[derive(Debug)]
@@ -83,7 +83,7 @@ mod tests {
 }
 ```
 
-### assert_eq! и assert_ne!
+## `assert_eq!` и `assert_ne!`
 
 ```rust
 pub fn add_two(a: i32) -> i32 {
@@ -134,7 +134,7 @@ mod tests {
 }
 ```
 
-### Создание сообщений об ошибках
+## Создание сообщений об ошибках
 
 ```rust
 pub fn greeting(name: &str) -> String {
@@ -157,7 +157,7 @@ mod tests {
 }
 ```
 
-### should_panic
+## `should_panic`
 
 Этот атрибут сообщает системе тестирования, что тест проходит, когда метод генерирует ошибку.
 Если ошибка не генерируется - тест считается не пройденным.
@@ -224,7 +224,7 @@ mod tests {
 }
 ```
 
-### Использование Result<T, E> в тестах
+## Использование `Result<T, E>` в тестах
 
 ```rust
 #[cfg(test)]
@@ -240,7 +240,7 @@ mod tests {
 }
 ```
 
-### Игнорирование тестов ignore
+## Игнорирование тестов `ignore`
 
 ```rust
 #[test]
@@ -257,4 +257,4 @@ fn expensive_test() {
 
 ← [Назад][back]
 
-[back]: <.> "НИгнорирование тестовазад к оглавлению"
+[back]: <.> "Назад к оглавлению"

@@ -1,26 +1,26 @@
 ### Создание базы данных
 
-```mysql
+```sql
 CREATE DATABASE productsdb;
 CREATE DATABASE IF NOT EXISTS productsdb;
 ```
 
 ### Установка/подключение базы данных
 
-```mysql
+```sql
 USE productsdb;
 ```
 
 ### Удаление базы данных
 
-```mysql
+```sql
 DROP DATABASE productsdb;
 DROP DATABASE IF EXISTS productsdb;
 ```
 
 ### Создание таблицы
 
-```mysql
+```sql
 CREATE TABLE Customers
 (
     Id        INT PRIMARY KEY AUTO_INCREMENT,
@@ -64,7 +64,7 @@ customer_age_chk.
 удалять или изменять их.
 Установить имя можно для ограничений PRIMARY KEY, CHECK, UNIQUE, а также FOREIGN KEY.
 
-```mysql
+```sql
 CREATE TABLE Customers
 (
     Id        INT AUTO_INCREMENT,
@@ -81,20 +81,20 @@ CREATE TABLE Customers
 
 ### Переименование таблиц
 
-```mysql
+```sql
 RENAME TABLE старое_название TO новое_название;
 RENAME TABLE Customers TO Clients;
 ```
 
 ### Полное удаление данных
 
-```mysql
+```sql
 TRUNCATE TABLE Clients;
 ```
 
 ### Удаление таблиц
 
-```mysql
+```sql
 DROP TABLE Clients;
 DROP TABLE IF EXISTS Clients;
 ```
@@ -121,7 +121,7 @@ Orders является зависимой и представляет зака�
 Таблица Orders через столбец CustomerId связана с таблицей Customers и ее столбцом Id.
 То есть столбец CustomerId является внешним ключом, который указывает на столбец Id из таблицы Customers.
 
-```mysql
+```sql
 CREATE TABLE Customers
 (
     Id        INT PRIMARY KEY AUTO_INCREMENT,
@@ -142,7 +142,7 @@ CREATE TABLE Orders
 
 С помощью оператора CONSTRAINT можно задать имя для ограничения внешнего ключа.
 
-```mysql
+```sql
 CREATE TABLE Orders
 (
     Id         INT PRIMARY KEY AUTO_INCREMENT,
@@ -171,7 +171,7 @@ CREATE TABLE Orders
 Для этого применяется опция CASCADE.
 Подобным образом работает и выражение ON UPDATE CASCADE.
 
-```mysql
+```sql
 CREATE TABLE Orders
 (
     Id         INT PRIMARY KEY AUTO_INCREMENT,
@@ -183,7 +183,7 @@ CREATE TABLE Orders
 
 При установках для внешнего ключа опции SET NULL необходимо, чтобы столбец внешнего ключа допускал значение NULL.
 
-```mysql
+```sql
 CREATE TABLE Orders
 (
     Id         INT PRIMARY KEY AUTO_INCREMENT,
@@ -195,35 +195,35 @@ CREATE TABLE Orders
 
 ### Добавление нового столбца
 
-```mysql
+```sql
 ALTER TABLE Customers
     ADD Address VARCHAR(50) NULL;
 ```
 
 ### Удаление столбца
 
-```mysql
+```sql
 ALTER TABLE Customers
     DROP COLUMN Address;
 ```
 
 ### Изменение значения по умолчанию
 
-```mysql
+```sql
 ALTER TABLE Customers
     ALTER COLUMN Age SET DEFAULT 22;
 ```
 
 ### Изменение типа столбца
 
-```mysql
+```sql
 ALTER TABLE Customers
     MODIFY COLUMN FirstName CHAR(100) NULL;
 ```
 
 ### Добавление и удаление внешнего ключа
 
-```mysql
+```sql
 CREATE TABLE Customers
 (
     Id        INT PRIMARY KEY AUTO_INCREMENT,
@@ -246,7 +246,7 @@ ALTER TABLE Orders
 При добавлении ограничений мы можем указать для них имя, используя оператор CONSTRAINT, после которого указывается имя
 ограничения:
 
-```mysql
+```sql
 ALTER TABLE Orders
     ADD CONSTRAINT orders_customers_fk FOREIGN KEY (CustomerId) REFERENCES Customers (Id);
 ```
@@ -254,14 +254,14 @@ ALTER TABLE Orders
 В данном случае ограничение внешнего ключа называется orders_customers_fk.
 Затем по этому имени мы можем удалить ограничение:
 
-```mysql
+```sql
 ALTER TABLE Orders
     DROP FOREIGN KEY orders_customers_fk;
 ```
 
 ### Добавление и удаление первичного ключа
 
-```mysql
+```sql
 CREATE TABLE Products
 (
     Id    INT,

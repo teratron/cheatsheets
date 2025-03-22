@@ -12,11 +12,11 @@
 
 ```scss
 .sidebar {
-  width: 300px;
+    width: 300px;
 
-  @media screen and (orientation: landscape) {
-    width: 500px;
-  }
+    @media screen and (orientation: landscape) {
+        width: 500px;
+    }
 }
 ```
 
@@ -36,11 +36,11 @@
 
 ```scss
 @media screen {
-  .sidebar {
-    @media (orientation: landscape) {
-      width: 500px;
+    .sidebar {
+        @media (orientation: landscape) {
+            width: 500px;
+        }
     }
-  }
 }
 ```
 
@@ -60,9 +60,9 @@ $feature: -webkit-min-device-pixel-ratio;
 $value: 1.5;
 
 @media #{$media} and ($feature: $value) {
-  .sidebar {
-    width: 500px;
-  }
+    .sidebar {
+        width: 500px;
+    }
 }
 ```
 
@@ -82,9 +82,9 @@ $value: 1.5;
 
 ```scss
 @mixin firefox-message($selector) {
-  body.firefox #{$selector}:before {
-    content: "Hi, Firefox users!";
-  }
+    body.firefox #{$selector}:before {
+        content: "Hi, Firefox users!";
+    }
 }
 
 @include firefox-message(".header");
@@ -100,181 +100,55 @@ body.firefox .header:before {
 
 ```scss
 // Узнаем значение элемента списка по индексу:
-nth
-(
-10
-px
-
-20
-px
-
-30
-px,
-
-1
-)
-nth
-(
-(
-Helvetica, Arial, sans-serif
-
-)
-,
-3
-)
-nth
-(
-(
-width:
-
-10
-px, length:
-
-20
-px
-
-)
-,
-2
-)
+nth(10px 20px 30px, 1)
+nth((Helvetica, Arial, sans-serif), 3)
+nth((width: 10px, length: 20px), 2)
 
 // Объединяем списки в один:
-join
-(
-10
-px
-
-20
-px,
-
-30
-px
-
-40
-px
-
-)
-join
-(
-(
-blue, red
-
-)
-,
-(
-#abc, #def
-
-)
-)
-join
-(
-10
-px,
-
-20
-px
-
-)
+join(10px 20px, 30px 40px)
+join((blue, red), (#abc, #def))
+join(10px, 20px)
 
 // Добавляем в список элементы:
-append
-(
-10
-px
-
-20
-px,
-
-30
-px
-
-)
-append
-(
-(
-blue, red
-
-)
-,
-green
-
-)
-append
-(
-10
-px
-
-20
-px,
-
-30
-px
-
-40
-px
-
-)
+append(10px 20px, 30px)
+append((blue, red), green)
+append(10px 20px, 30px 40px)
 ```
 
 ```css
 /* Узнаем значение элемента списка по индексу: */
-10
-px
+10px
 sans-serif
-length,
-
-20
-px
+length: 20px
 
 /* Объединяем списки в один: */
-10
-px
-
-20
-px
-
-30
-px
-
-40
-px
+10px 20px 30px 40px
 blue, red, #abc, #def
-
-10
-px
-
-20
-px
+10px 20px
 
 /* Добавляем в список элементы: */
-10
-px
-
-20
-px
-
-30
-px
+10px 20px 30px
 blue, red, green
+10px 20px 30px 40px
 ```
 
 ### Мапы (Ассоциативные массивы)
 
 ```scss
 $status-colors: (
-        primary: #000,
-        success: #27BA6C,
-        info: #03a9f4,
-        warning: #FF8833,
-        danger: #ff1a1a
+    primary: #000,
+    success: #27BA6C,
+    info: #03a9f4,
+    warning: #FF8833,
+    danger: #ff1a1a
 );
 
 .message {
-  @each $status, $color in $status-colors {
-    &--#{$status} {
-      background: $color;
+    @each $status, $color in $status-colors {
+        &--#{$status} {
+            background: $color;
+        }
     }
-  }
 }
 ```
 
@@ -309,8 +183,9 @@ $status-colors: (
 ```scss
 $name: foo;
 $attr: border;
+
 p.#{$name} {
-  #{$attr}-color: blue;
+    #{$attr}-color: blue;
 }
 ```
 
@@ -324,9 +199,9 @@ p.foo {
 
 ```scss
 p {
-  $font-size: 12px;
-  $line-height: 30px;
-  font: #{$font-size}/#{$line-height};
+    $font-size: 12px;
+    $line-height: 30px;
+    font: #{$font-size}/#{$line-height};
 }
 ```
 
@@ -340,15 +215,15 @@ p {
 
 ```scss
 @mixin does-parent-exist {
-  @if & {
-    &:hover {
-      color: red;
+    @if & {
+        &:hover {
+            color: red;
+        }
+    } @else {
+        a {
+            color: red;
+        }
     }
-  } @else {
-    a {
-      color: red;
-    }
-  }
 }
 ```
 
@@ -365,8 +240,8 @@ $content: "Новый тестовый текст?" !default;
 $new_content: "Как пройти в библиотеку?" !default;
 
 #main {
-  content: $content;
-  new-content: $new_content;
+    content: $content;
+    new-content: $new_content;
 }
 ```
 
@@ -384,7 +259,7 @@ $content: null;
 $content: "НЕ-null контент" !default;
 
 #main {
-  content: $content;
+    content: $content;
 }
 ```
 
